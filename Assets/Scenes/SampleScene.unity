@@ -449,6 +449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruitToSpawnPrefabs:
   - {fileID: 4896784866810100041, guid: acd52355f7328f34bb85513cf515d5bf, type: 3}
+  - {fileID: 5774584810726584557, guid: 0965accde89d1784a9d6f907451d4dea, type: 3}
+  - {fileID: 723178784743795647, guid: 18beb88103e4b8843af19bfe0d0a4e13, type: 3}
   bomb: {fileID: 4818931570413267700, guid: 6257cabd6128b0348abe61b00ebdff72, type: 3}
   spawnPlaces:
   - {fileID: 2033268517}
@@ -1287,6 +1289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  highScore: 0
   scoreText: {fileID: 1130184077}
   highScoreText: {fileID: 2054595284}
   gameOverPanel: {fileID: 1171745269}
