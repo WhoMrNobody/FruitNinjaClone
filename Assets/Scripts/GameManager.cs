@@ -13,8 +13,12 @@ public class GameManager : MonoBehaviour
     public TMP_Text highScoreText;
     [Header("Game Over Elements")]
     public GameObject gameOverPanel;
-    
+    [Header("Sounds")]
+    public AudioClip[] sliceSounds;
+    private AudioSource audioSource;
     private void Start() {
+
+        audioSource=GetComponent<AudioSource>();
         GetHighScore();
     }
     public void IncreaseScore(int scoreValue){
@@ -46,5 +50,11 @@ public class GameManager : MonoBehaviour
 
         highScore =  PlayerPrefs.GetInt("HighScore");
         highScoreText.text = "Best : " + highScore.ToString();
+    }
+
+    public void PlayRandomSliceSounds(){
+
+        AudioClip s = sliceSounds[Random.Range(0, sliceSounds.Length)];
+        audioSource.PlayOneShot(s);
     }
 }

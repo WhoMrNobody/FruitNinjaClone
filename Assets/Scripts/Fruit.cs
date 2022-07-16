@@ -8,7 +8,12 @@ public class Fruit : MonoBehaviour
     public float explosionRadius = 5f;
     public int scoreAmount = 3;
 
-    // Update is called once per frame
+    GameManager gameManager;
+
+    private void Awake() {
+        
+        gameManager = FindObjectOfType<GameManager>();
+    }
     void Update()
     {
        
@@ -25,7 +30,8 @@ public class Fruit : MonoBehaviour
             rigidbody.transform.rotation = Random.rotation;
             rigidbody.AddExplosionForce(Random.Range(500, 1000), transform.position, explosionRadius);
         }
-        FindObjectOfType<GameManager>().IncreaseScore(scoreAmount);
+        gameManager.PlayRandomSliceSounds();
+        gameManager.IncreaseScore(scoreAmount);
         Destroy(instantiate.gameObject, 5f);
         Destroy(gameObject);
     }
